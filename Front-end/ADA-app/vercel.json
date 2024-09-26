@@ -1,4 +1,7 @@
 {
+    "builds": [
+      { "src": "dist/ada-app/**/*", "use": "@vercel/static" }
+    ],
     "routes": [
       {
         "src": "/(.*)", 
