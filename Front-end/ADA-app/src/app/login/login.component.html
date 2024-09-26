@@ -1,0 +1,23 @@
+<main>
+    <div class="container">
+        <h1 class="text-center">Login</h1>
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" [(ngModel)]="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" [(ngModel)]="senha" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
+            </div>
+            <div class="d-flex justify-content-between">
+                <!-- [routerLink]="['/meuacesso']" -->
+                <button (click)="login()" class="btn btn-primary">Entrar</button> <br>
+                <a [routerLink]="['/recupera']" class="btn btn-link">Esqueci minha senha</a>
+            </div>
+            <div>
+                <p>Não possui cadastro? se <strong><a [routerLink]="['/cadastro']">Cadastre</a></strong> aqui</p>
+            </div>
+        </form>
+    </div>
+</main>

@@ -1,0 +1,47 @@
+main {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url(/assets/img/fundo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    /* color: #ec1b1b04; */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 140px;
+    padding-bottom: 60px
+}
+
+.container{
+    border: solid rgba(0, 0, 0, 0.753) 3px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+.fa-brands{
+    padding-right: 20px;
+    
+}
+.container {
+    /* display: flex; */
+    background-color: rgba(158, 182, 226, 0.961);
+    width: 50%;
+    height: 470px;
+}
+a{
+    color: #ffffff;
+}
+a:hover{
+    color: blue;
+    
+}
+button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.text-center{
+    margin-right: 20px;
+    font-size: 30px;
+    margin-top: 10px;
+}

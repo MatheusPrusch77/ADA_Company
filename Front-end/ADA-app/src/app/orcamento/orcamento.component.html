@@ -1,0 +1,83 @@
+<main>
+  <div class="container">
+    <h2>Preenchimento de Orçamento</h2>
+    <form [formGroup]="orcamentoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nome">Nome da empresa:</label>
+        <input type="text" id="nome" class="form-control" formControlName="nome">
+        <div *ngIf="orcamentoForm.get('nome')?.invalid && orcamentoForm.get('nome')?.touched">
+          <small class="text-danger">Nome é obrigatório.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        <div *ngIf="orcamentoForm.get('email')?.invalid && orcamentoForm.get('email')?.touched">
+          <small class="text-danger" *ngIf="orcamentoForm.get('email')?.errors?.['required']">Email é obrigatório.</small>
+          <small class="text-danger" *ngIf="orcamentoForm.get('email')?.errors?.['email']">Email inválido.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" class="form-control" formControlName="telefone">
+        <div *ngIf="orcamentoForm.get('telefone')?.invalid && orcamentoForm.get('telefone')?.touched">
+          <small class="text-danger">Telefone é obrigatório.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição do Projeto:</label>
+        <textarea id="descricao" class="form-control" formControlName="descricao"></textarea>
+        <div *ngIf="orcamentoForm.get('descricao')?.invalid && orcamentoForm.get('descricao')?.touched">
+          <small class="text-danger">Descrição é obrigatória.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="publico">Público Alvo:</label>
+        <textarea id="publico" class="form-control" formControlName="publico"></textarea>
+        <div *ngIf="orcamentoForm.get('publico')?.invalid && orcamentoForm.get('publico')?.touched">
+          <small class="text-danger">Público alvo é obrigatório.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Serviço em solicitação:</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="serv1" formControlName="servico" value="Adaptação acessível do site">
+          <label class="form-check-label" for="serv1">Adaptação acessível do site</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="serv2" formControlName="servico" value="Criação do site acessível">
+          <label class="form-check-label" for="serv2">Criação do site acessível</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="serv3" formControlName="servico" value="Consultoria para o site já existente">
+          <label class="form-check-label" for="serv3">Consultoria para o site já existente</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tipoServico">Expectativa do prazo de entrega: </label>
+        <select id="tipoServico" class="form-control" formControlName="tipoServico">
+          <option value="">Selecione...</option>
+          <option value="Manutenção">Curto prazo</option>
+          <option value="Desenvolvimento">Médio prazo</option>
+          <option value="Consultoria">Longo prazo</option>
+        </select>
+        <div *ngIf="orcamentoForm.get('tipoServico')?.invalid && orcamentoForm.get('tipoServico')?.touched">
+          <small class="text-danger">Tipo de serviço é obrigatório.</small>
+        </div>
+      </div>
+
+      <div class="form-group form-check">
+        <input type="checkbox" id="urgencia" class="form-check-input" formControlName="urgencia">
+        <label class="form-check-label" for="urgencia">É urgente?</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="orcamentoForm.invalid">Enviar</button>
+    </form>
+  </div>
+</main>

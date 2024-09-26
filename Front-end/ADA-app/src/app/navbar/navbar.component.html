@@ -1,0 +1,20 @@
+<nav>
+  <nav class="navbar" id="navbar">
+    <ul class="nav-log" *ngIf="!usuarioLogado">
+      <li class="nav-item login" id="login"><a [routerLink]="['/login']">Login</a></li>
+      <li class="nav-item login" id="cadastro"><a [routerLink]="['/cadastro']">Cadastro</a></li> 
+    </ul>
+    <ul class="nav-log" *ngIf="usuarioLogado">
+      <button class="btn btn-outline-danger" id="logout" (click)="logout()">Logout</button>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item" id="home"><a [routerLink]="['/header']">Home</a></li>
+      <li class="nav-item" id="serviços"><a [routerLink]="['/servico']">Serviços</a></li>
+      <li class="logo"><a [routerLink]="['/header']"><img src="assets/img/ADA 2.png" alt="Logo da Sua Empresa" id="logo"></a></li>
+      <li class="nav-item" id="sobre"><a [routerLink]="['/sobre']">Quem Somos</a></li>
+      <li class="nav-item" id="contatos"><a [routerLink]="['/contato']">Fale conosco</a></li>
+      <li *ngIf="usuarioLogado" class="nav-item" id="meuacesso"><a [routerLink]="['/meuacesso']">Meu Perfil</a></li>
+    </ul>
+  </nav>
+</nav>
+<router-outlet></router-outlet>

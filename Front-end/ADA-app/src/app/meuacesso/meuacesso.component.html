@@ -1,0 +1,75 @@
+
+  <main>
+<div class="container">
+  <h1>Meu Perfil</h1>
+
+  <!-- Informações Básicas do Usuário -->
+  <section class="profile-section">
+    <h2>Informações Básicas</h2>
+    <div class="profile-item">
+      <label>Nome:</label>
+      <span>Nome da Empresa</span>
+    </div>
+    <div class="profile-item">
+      <label>Email:</label>
+      <span>username</span>
+    </div>
+      <div class="profile-item">
+        <label>Senha: </label>
+        <span> *******</span>
+      </div>
+  </section>
+
+  <!-- Informações de Contato -->
+  <section class="profile-section">
+    <h2>Informações de Contato</h2>
+    <div class="profile-item">
+      <label>Email Empresarial:</label>
+      <span>usuarioexemplo.com</span>
+    </div>
+    <div class="profile-item">
+      <label>Telefone:</label>
+      <span>(00) 0000-0000</span>
+    </div>
+  </section>
+
+  <!-- Dados Pessoais -->
+  <section class="profile-section">
+    <h2>Dados Empresariais</h2>
+    <div class="profile-item">
+      <label>Data de fundação:</label>
+      <span>01/01/1990</span>
+    </div>
+    <div class="profile-item">
+      <label>Sobre a Empresa:</label>
+      <span>Uma breve biografia...</span>
+    </div>
+  </section>
+
+  <!-- Configurações de Conta -->
+  <section class="profile-section">
+    <h2>Configurações de Conta</h2>
+    <button><a [routerLink]="['/recupera']" type="submit" class="btn btn-primary">Alterar Senha</a></button>
+    <button><a [routerLink]="['/recupera']" type="submit" class="btn btn-primary">Atualizar Dados Empresariais</a></button>
+    <button><a [routerLink]="['/recupera']" type="submit" class="btn btn-primary">Alterar dados do pedido</a></button>
+  </section>
+
+  <!-- Suporte ao Cliente -->
+  <section class="profile-section">
+    <h2>Suporte ao Cliente</h2>
+    <button><a [routerLink]="['/recuperasenha']" type="submit" class="btn btn-primary">Ajuda e Suporte</a></button>
+    <button class="btn">Histórico de Suporte</button>
+  </section>
+
+  <!-- Histórico de Compra/Pedido -->
+  <h2>Meus Pedidos</h2>
+  <div *ngFor="let order of orders">
+    <div class="order-details">
+      <p>ID do Pedido: {{ order.id }}</p>
+      <p>Serviço: {{ order.product }}</p>
+      <p>Status: {{ order.status }}</p>
+      <p>Data: {{ order.data }}</p>
+    </div>
+  </div>
+</div>
+</main>
