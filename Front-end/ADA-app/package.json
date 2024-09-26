@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
-    "build:prod": "ng build --prod",
     "serve:ssr:ADA-app": "node dist/ada-app/server/server.mjs"
   },
   "private": true,
